@@ -1,5 +1,5 @@
 /*******************************************************************************
-Copyright © 2015, STMicroelectronics International N.V.
+Copyright â“’ 2015, STMicroelectronics International N.V.
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
@@ -431,7 +431,7 @@ typedef enum {
     #define CONFIG_GPIO_INTERRUPT_DISABLED         0x00
     /** trigger when value < low threshold */
     #define CONFIG_GPIO_INTERRUPT_LEVEL_LOW        0x01
-    /** trigger when value < low threshold */
+    /** trigger when value > high threshold */
     #define CONFIG_GPIO_INTERRUPT_LEVEL_HIGH       0x02
     /** trigger when outside range defined by high low threshold */
     #define CONFIG_GPIO_INTERRUPT_OUT_OF_WINDOW    0x03
