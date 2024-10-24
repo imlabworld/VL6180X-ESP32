@@ -1178,7 +1178,7 @@ static int VL6180x_RangeStaticInit(i2c_master_dev_handle_t* handle)
 	VL6180x_WrByte(handle, 0x0014, 0x24); /* Configures interrupt on New sample ready */
 
 
-	status = VL6180x_RangeSetMaxConvergenceTime(handle, 50); /*  Calculate ece value on initialization (use max conv) */
+	status = VL6180x_RangeSetMaxConvergenceTime(handle, 20); /*  Calculate ece value on initialization (use max conv) */
 	LOG_FUNCTION_END(status);
 
 	return status;
