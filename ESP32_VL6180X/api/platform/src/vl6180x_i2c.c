@@ -101,7 +101,7 @@ int VL6180x_UpdateByte(i2c_master_dev_handle_t* handle, uint16_t index, uint8_t 
     if (status != 0)
         return status;
 
-    ESP_LOGI("DRIVER", "update byte: %d, andData: %d, orData: %d", data, AndData, OrData);
+    ESP_LOGI("VL6180", "update byte: %d, andData: %d, orData: %d", data, AndData, OrData);
     data = (data & AndData) | OrData;
     return VL6180x_WrByte(handle, index, data);
 }
