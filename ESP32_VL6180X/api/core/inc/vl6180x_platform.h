@@ -211,7 +211,7 @@ typedef struct MyDev_t *VL6180xDev_t;
  * @param dev The device
  * @ingroup api_platform
  */
-void VL6180x_PollDelay(); /* usualy best implemanted a a real fucntion */
+void VL6180x_PollDelay(i2c_master_dev_handle_t* handle); /* usualy best implemanted a a real fucntion */
 
 /** @def VL6180x_PollDelay
  *  @brief Default value : does nothing. Macro to be deleted it you implement a real function
