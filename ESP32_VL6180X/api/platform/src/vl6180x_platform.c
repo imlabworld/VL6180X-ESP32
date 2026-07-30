@@ -16,7 +16,7 @@
  * @param dev The device
  * @ingroup api_platform
  */
-void VL6180x_PollDelay()
+void VL6180x_PollDelay(i2c_master_dev_handle_t* handle)
 {
     vTaskDelay(pdMS_TO_TICKS(1));
 }

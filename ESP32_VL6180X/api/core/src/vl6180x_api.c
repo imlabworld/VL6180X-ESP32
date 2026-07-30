@@ -179,7 +179,7 @@ static int _GetRateResult(i2c_master_dev_handle_t* handle, VL6180x_RangeData_t *
 #endif
 
 #if VL6180x_WRAP_AROUND_FILTER_SUPPORT
-static int _filter_Init();
+static int _filter_Init(i2c_master_dev_handle_t* handle);
 static int _filter_GetResult(i2c_master_dev_handle_t* handle, VL6180x_RangeData_t *pData);
 	#define _IsWrapArroundActive() VL6180xDevDataGet(WrapAroundFilterActive)
 #else
@@ -769,7 +769,7 @@ int VL6180x_RangePollMeasurement(i2c_master_dev_handle_t* handle, VL6180x_RangeD
 			break;
 		}
 
-		VL6180x_PollDelay();
+		VL6180x_PollDelay(handle);
 	}
 	/* //![single_shot_snipet] */
 
@@ -1837,7 +1837,7 @@ static int32_t _GetAveTotalTime(i2c_master_dev_handle_t* handle)
 /*
  * One time init
  */
-int _filter_Init()
+static int _filter_Init(i2c_master_dev_handle_t* handle)
 {
 	int i;
 	_FilterData(MeasurementIndex) = 0;
@@ -2759,6 +2759,5 @@ static int _DMax_Compute(i2c_master_dev_handle_t* handle, VL6180x_RangeData_t *p
 #undef Fix7_2_KCPs
 
 #endif /* VL6180x_HAVE_DMAX_RANGING */
-
 
 

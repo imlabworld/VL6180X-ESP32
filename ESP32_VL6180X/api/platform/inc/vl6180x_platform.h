@@ -36,6 +36,7 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 /* this is a typical ansi and posix example with multithread and i2c lock concern */
 #include <unistd.h>
 #include <pthread.h>
+#include "driver/i2c_master.h"
 
 /**
  * @file vl6180x_platform.h
@@ -207,10 +208,10 @@ typedef struct MyDev_t *VL6180xDev_t;
  * @code
  * #define VL6180x_PollDelay(...) (void)0
  * @endcode
- * @param dev The device
+ * @param handle The device
  * @ingroup api_platform
  */
-void VL6180x_PollDelay(); /* usualy best implemanted a a real fucntion */
+void VL6180x_PollDelay(i2c_master_dev_handle_t* handle); /* usualy best implemanted a a real fucntion */
 
 /** @def VL6180x_PollDelay
  *  @brief Default value : does nothing. Macro to be deleted it you implement a real function
@@ -307,6 +308,4 @@ void VL6180x_PollDelay(); /* usualy best implemanted a a real fucntion */
 #endif /* else */
 
 #endif  /* VL6180x_PLATFORM */
-
-
 
